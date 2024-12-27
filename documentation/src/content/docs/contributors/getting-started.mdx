@@ -1,0 +1,43 @@
+---
+title: Getting started
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+This guide will outline how to develop and contribute to the project. 
+This guide assumes you know your way around web projects and are proficient in TypeScript.
+
+## Prerequisites
+
+This projects uses the following tools:
+- [Bun](https://bun.sh/)
+- [Turborepo](https://turbo.build/repo/docs)
+- [Biome](https://biomejs.dev/)
+- [Astro Starlight](https://starlight.astro.build/)
+
+You can read up on these tools in the links provided. They are the tools that power the project and are essential to developing and contributing to the project.
+
+The project is written in [TypeScript](https://www.typescriptlang.org/), and will use [WebGPU](https://www.w3.org/TR/webgpu/) for rendering.
+
+## Directory structure
+
+The project is structured as follows:
+
+<FileTree>
+- documentation/ Documentation site build with Astro Starlight
+- examples/ Example projects that demonstrate how to use Toasty
+- infrastructure/ Infrastructure code for the project like the CLI
+- packages/ Packages that make up the project
+</FileTree>
+
+## Packages
+
+The project is split into multiple packages. Treating each package as its own project allows for better separation of concerns
+and makes it easier to manage the project.
+
+Every project should thus contain a dedicated README file that explains the purpose of the package and how to use it,
+because packages may be used in isolation outside the main project.
+
+Include relevant doc comments according to the [TSDoc](https://tsdoc.org/) standard.
+
+More thorough documentation should be written in the website here (located in the `documentation` directory).
