@@ -22,7 +22,7 @@ If you're brave enough to give it a try, please read the [documentation](https:/
 
 - **3d**: Do not design to support for sophisticated 3d games or high-end graphics.
 - **high performance**: Trade performance for simplicity, ease of use and iteration speed where it makes sense.
-- **cross-platform**: Do not aim to support all platforms, focus desktops but not necessarily mobile.
+- **cross-platform**: Do not aim to support all platforms, focus on desktops but not necessarily mobile.
 - **compete with existing engines**: Do not aim to compete with existing engines like Unity, Godot, or Unreal.
 
 ## Getting started
