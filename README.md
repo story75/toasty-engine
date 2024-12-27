@@ -2,11 +2,6 @@
 
 This is the workspace for Toasty. A WebGPU game engine that is specifically tailored for 2d (and 2.5d) games that may run on any device that can run a browser.
 
-<p align="center">
-  <a href="https://story75.github.io/toasty-engine/">Documentation</a> |
-  <a href="https://story75.github.io/toasty-engine/users/getting-started">Getting started</a>
-</p>
-
 ## Here be dragons
 
 This is a work in progress, and APIs may not be missing, incomplete, or subject to change.
@@ -32,7 +27,7 @@ If you're brave enough to give it a try, please read the [documentation](https:/
 
 ## Getting started
 
-Please refer to the [getting started part of our documentation](https://story75.github.io/toasty-engine/users/getting-started) for more information.
+Please refer to the [getting started part of the user documentation](https://story75.github.io/toasty-engine/users/getting-started) for more information.
 
 ## Why create Toasty in the first place?
 
