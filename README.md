@@ -2,7 +2,9 @@
 
 <p align="center">
   <img src="./toasty-logo.png" />
-  <p style="color: #888; font-size: 0.9em; margin-top: 5px; font-style: italic; text-align: center;">Placeholder logo. Contribute a logo!</p>
+  <details>
+    <summary style="color: #888; font-size: 0.9em; text-align: center; font-style:italic;">Placeholder logo. Contribute a logo!</summary>
+  </details>
 </p>
 
 Toasty is a game engine built with WebGPU, specifically designed for creating 2D (and 2.5D) games that can run in any browser. Toasty is licensed under the [MIT License](./LICENSE).
