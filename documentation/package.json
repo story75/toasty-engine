@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.30.3",
     "astro": "^5.0.2",
-    "sharp": "^0.32.5",
+    "sharp": "^0.33.0",
     "starlight-heading-badges": "^0.4.0",
     "starlight-links-validator": "^0.14.1",
     "starlight-package-managers": "^0.8.1"
