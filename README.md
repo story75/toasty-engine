@@ -1,6 +1,6 @@
 # Toasty: A 2D WebGPU Game Engine
 
-Toasty is a game engine built with WebGPU, specifically designed for creating 2D (and 2.5D) games that can run in any browser.
+Toasty is a game engine built with WebGPU, specifically designed for creating 2D (and 2.5D) games that can run in any browser. Toasty is licensed under the [MIT License](./LICENSE).
 
 ## Work in Progress
 
@@ -25,8 +25,20 @@ These areas are intentionally *not* in the scope of Toasty:
 
 *   **3D Graphics:** No support is planned for sophisticated 3D games or high-end 3D graphics.
 *   **High Performance Focus:** Prioritizes simplicity, ease of use, and rapid iteration over raw performance where appropriate.
-*  **Universal Cross-Platform Support:** Focuses on desktop platforms primarily, with mobile support as a secondary goal.
+*   **Universal Cross-Platform Support:** Focuses on desktop platforms primarily, with mobile support as a secondary goal.
 *   **Competition with Existing Engines:** Does not aim to be a direct competitor to engines like Unity, Godot, or Unreal.
+
+## 2.5D Definition
+
+In the context of Toasty, "2.5D" refers to games that utilize simple 3D environments with a fixed-perspective camera. Sprites in these environments are rendered as 2D billboards that always face the camera.
+
+## Platform Support
+
+Toasty aims to support any platform that can run [NW.js](https://nwjs.io/). This primarily includes:
+
+*   Windows
+*   macOS
+*   Linux
 
 ## Getting Started
 
