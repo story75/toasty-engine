@@ -1,5 +1,9 @@
 # Toasty: A 2D WebGPU Game Engine
 
+<p align="center">
+  <img src="./toasty-logo.png" />
+</p>
+
 Toasty is a game engine built with WebGPU, specifically designed for creating 2D (and 2.5D) games that can run in any browser. Toasty is licensed under the [MIT License](./LICENSE).
 
 ## Work in Progress
