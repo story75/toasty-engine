@@ -5,7 +5,7 @@ template: splash
 hero:
   tagline: Jump into the documentation right away!
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/toasty-logo.png
   actions:
     - text: Getting started
       link: /users/getting-started
@@ -18,19 +18,22 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Features
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Lightweight, Modular Core with Reasonable Defaults" icon="puzzle">
+		Small and easy to understand core, with complex features as modular packages. Provides good default settings to enable users to start quickly.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+    <Card title="2D Focused with 2.5D Support" icon="star">
+        Designed primarily for 2D pixel art games, Toasty also allows for simple 3D environments with a fixed-perspective camera, enabling the creation of 2.5D games.
+    </Card>
+	<Card title="Built-in Editors" icon="pencil">
+		Includes editors for creating game levels, animations, and managing game data.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Comprehensive Documentation" icon="open-book">
+		Clear and complete documentation for easy learning and usage.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+    <Card title="Rapid Prototyping" icon="rocket">
+        Simple and easy-to-use engine for rapid prototyping and development of pixel art games.
+    </Card>
 </CardGrid>

@@ -1,11 +1,14 @@
-import starlight from '@astrojs/starlight';
 // @ts-check
+import starlight from '@astrojs/starlight';
 import { defineConfig } from 'astro/config';
+import starlightHeadingBadges from 'starlight-heading-badges';
+import starlightLinksValidator from 'starlight-links-validator';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     starlight({
+      plugins: [starlightLinksValidator(), starlightHeadingBadges()],
       title: 'Toasty',
       social: {
         github: 'https://github.com/story75/toasty-engine',

@@ -1,43 +1,41 @@
 ---
-title: Getting started
+title: Getting Started
 ---
 
 import { FileTree } from '@astrojs/starlight/components';
 
-This guide will outline how to develop and contribute to the project. 
-This guide assumes you know your way around web projects and are proficient in TypeScript.
+This guide will help you get started with developing and contributing to the project. It assumes you have some experience with web development and are comfortable with TypeScript.
 
 ## Prerequisites
 
-This projects uses the following tools:
-- [Bun](https://bun.sh/)
-- [Turborepo](https://turbo.build/repo/docs)
-- [Biome](https://biomejs.dev/)
-- [Astro Starlight](https://starlight.astro.build/)
+Before you start, make sure you have the following tools installed:
 
-You can read up on these tools in the links provided. They are the tools that power the project and are essential to developing and contributing to the project.
+-   **[Bun](https://bun.sh/)**: A fast JavaScript runtime and package manager.
+-   **[Turborepo](https://turbo.build/repo/docs)**: A high-performance build system for monorepos.
+-   **[Biome](https://biomejs.dev/)**: A toolchain for web development, including a formatter and linter.
+-   **[Astro Starlight](https://starlight.astro.build/)**: A documentation site generator.
 
-The project is written in [TypeScript](https://www.typescriptlang.org/), and will use [WebGPU](https://www.w3.org/TR/webgpu/) for rendering.
+Take some time to familiarize yourself with these tools by visiting the links provided. They are essential for developing and contributing to the project.
 
-## Directory structure
+The project is written in [TypeScript](https://www.typescriptlang.org/) and uses [WebGPU](https://www.w3.org/TR/webgpu/) for rendering.
 
-The project is structured as follows:
+## Project Structure
+
+The project is organized into the following directories:
 
 <FileTree>
-- documentation/ Documentation site build with Astro Starlight
-- examples/ Example projects that demonstrate how to use Toasty
-- infrastructure/ Infrastructure code for the project like the CLI
+- documentation/ Documentation site built with Astro Starlight
+- examples/ Example projects demonstrating how to use Toasty
+- infrastructure/ Infrastructure code for the project, such as the CLI
 - packages/ Packages that make up the project
 </FileTree>
 
-## Packages
+## Understanding Packages
 
-The project is split into multiple packages. Treating each package as its own project allows for better separation of concerns
-and makes it easier to manage the project.
+The project is divided into multiple packages, each treated as an independent project. This approach promotes separation of concerns and makes the project easier to manage.
 
-Every project should thus contain a dedicated README file that explains the purpose of the package and how to use it,
-because packages may be used in isolation outside the main project.
+Each package should have its own `README.md` file explaining its purpose and usage, as packages may be used independently.
 
-Include relevant doc comments according to the [TSDoc](https://tsdoc.org/) standard.
+Make sure to include relevant documentation comments using the [TSDoc](https://tsdoc.org/) standard.
 
-More thorough documentation should be written in the website here (located in the `documentation` directory).
+More detailed documentation should be written in the Starlight documentation located in the `documentation` directory.
