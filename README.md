@@ -1,51 +1,45 @@
-# Toasty
+# Toasty: A 2D WebGPU Game Engine
 
-This is the workspace for Toasty. A WebGPU game engine that is specifically tailored for 2d (and 2.5d) games that may run on any device that can run a browser.
+Toasty is a game engine built with WebGPU, specifically designed for creating 2D (and 2.5D) games that can run in any browser.
 
-## Here be dragons
+## Work in Progress
 
-This is a work in progress, and APIs may not be missing, incomplete, or subject to change.
-If you're brave enough to give it a try, please read the [documentation](https://story75.github.io/toasty-engine/) and report any problems you find.
+This project is under active development. Expect that APIs may be missing, incomplete, or subject to change. If you're feeling adventurous and want to try it out, please check the [documentation](https://story75.github.io/toasty-engine/) and report any issues you encounter.
 
-## Design goals
+## Core Design Principles
 
-- **lightweight core**: Keep the core itself small and easy to understand. More complex features should be implemented as separate packages.
-- **2d focus**: Target mainly 2d pixel art games, but it should be possible to create 2.5d games as well.
-- **common functionality**: Provide common functionality that is needed for most games, like input handling, rendering, and physics.
-- **editors**: Provide editors for creating levels, animations, and databases for items, characters, etc.
-- **modular**: Be modular, so users can easily add,remove or replace features.
-- **reasonable defaults**: Provide reasonable defaults, so users can get started quickly.
-- **simplicity**: Focus on 2d games without the need for complex 3d features.
-- **great documentation**: Provide great documentation, so users can easily get started and understand how to use the engine.
+Toasty is guided by these design goals:
 
-## Out of scope
+*   **Lightweight Core:** The engine's core will be kept small and easy to understand. Complex features will be developed as separate, modular packages.
+*   **2D Focused:** Primarily targets 2D pixel art games, with the possibility of creating 2.5D games as well.
+*   **Common Functionality:** Provide common game development essentials such as input handling, rendering, and physics.
+*   **Built-in Editors:** Includes editors for creating game levels, animations, and managing game data (items, characters, etc.).
+*   **Modular Architecture:** Designed to be highly modular, allowing users to easily add, remove, or replace features.
+*   **Reasonable Defaults:** Provides good default settings to enable users to start quickly.
+*   **Simplicity:** Focuses on simplicity for 2D game development, avoiding the need for complex 3D features.
+*   **Comprehensive Documentation:** Provides clear and complete documentation for easy learning and usage.
 
-- **3d**: Do not design to support for sophisticated 3d games or high-end graphics.
-- **high performance**: Trade performance for simplicity, ease of use and iteration speed where it makes sense.
-- **cross-platform**: Do not aim to support all platforms, focus on desktops but not necessarily mobile.
-- **compete with existing engines**: Do not aim to compete with existing engines like Unity, Godot, or Unreal.
+## Out of Scope
 
-## Getting started
+These areas are intentionally *not* in the scope of Toasty:
 
-Please refer to the [getting started part of the user documentation](https://story75.github.io/toasty-engine/users/getting-started) for more information.
+*   **3D Graphics:** No support is planned for sophisticated 3D games or high-end 3D graphics.
+*   **High Performance Focus:** Prioritizes simplicity, ease of use, and rapid iteration over raw performance where appropriate.
+*  **Universal Cross-Platform Support:** Focuses on desktop platforms primarily, with mobile support as a secondary goal.
+*   **Competition with Existing Engines:** Does not aim to be a direct competitor to engines like Unity, Godot, or Unreal.
 
-## Why create Toasty in the first place?
+## Getting Started
 
-The main goal is to create a game engine akin to RPG Maker, but with more flexibility and control.
-RPG Maker is very good to learn the basics of game development, and provide a ton of tools to create a game.
-Together with the provided assets, basically anyone can create a game with it, as long as they see it through.
+To begin using Toasty, please refer to the "[Getting Started](https://story75.github.io/toasty-engine/users/getting-started)" section of the user documentation.
 
-In my personal opinion, RPG Maker is too restrictive, and the games made with it are easily recognizable.
-You can see a game and immediately know it was made with RPG Maker, just by looking at it.
-This also holds true for heavily modified games with a lot of custom assets and scripts.
+## Motivation Behind Toasty
 
-Toasty aims to be different in that regard. The goal is to provide a simple and easy to use engine,
-that allows for quick prototyping and development of pixel art games, but provide enough flexibility and control,
-to tweak _almost_ every aspect to your liking.
+The core vision for Toasty is to create an engine that offers the user-friendly experience of RPG Maker, but with greater flexibility and control. While RPG Maker is excellent for learning the basics of game development, its restrictiveness and easily identifiable style make games made with it readily apparent.
 
-The difference to let's say LÖVE is that Toasty will try to include more batteries, like editors to create and edit levels or items,
-without resorting to other tools like Tiled or spreadsheets unless you want to.
+Toasty is designed to offer a more open approach. The goal is to have a simple and easy-to-use engine that allows for rapid prototyping and development of pixel art games. At the same time, Toasty should provide sufficient flexibility to allow users to customize almost every aspect of their game.
+
+Unlike other engines (e.g., LÖVE), Toasty aims to include more "batteries included," meaning it will incorporate editors for creating and editing levels, items, and other game assets directly within the engine, minimizing the need for separate tools (unless the user prefers them).
 
 ## Contributing
 
-Please refer to the [contributor part of our documentation](https://story75.github.io/toasty-engine/contributors/getting-started) for more information.
+If you are interested in contributing to Toasty, please refer to the "[Getting Started](https://story75.github.io/toasty-engine/contributors/getting-started)" section of the contributor documentation.
