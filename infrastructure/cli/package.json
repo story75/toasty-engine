@@ -1,0 +1,23 @@
+{
+  "name": "@toasty-engine/cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/story75/toasty-engine.git",
+    "directory": "infrastructure/cli"
+  },
+  "license": "MIT",
+  "bin": {
+    "toasty-cli": "./src/index.ts"
+  },
+  "scripts": {
+    "check": "tsc"
+  },
+  "dependencies": {
+    "esbuild": "^0.24.2",
+    "automd": "^0.3.12",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.33"
+  }
+}

@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+const packages = await getCollection('packages');
+---
+
+{packages.map(packageJson => (<div>
+    <h2 id={packageJson.id}><a href={"https://npmjs.com/package/" + packageJson.data.name}>{packageJson.data.name}</a></h2>
+    <p>{packageJson.data.description}</p>
+</div>))}
+

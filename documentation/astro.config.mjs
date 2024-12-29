@@ -16,7 +16,10 @@ export default defineConfig({
       sidebar: [
         {
           label: 'User guide',
-          items: [{ label: 'Getting started', slug: 'users/getting-started' }],
+          items: [
+            { label: 'Getting started', slug: 'users/getting-started' },
+            { label: 'Packages', slug: 'users/packages' },
+          ],
         },
         {
           label: 'Contributor guide',

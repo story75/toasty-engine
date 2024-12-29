@@ -1,0 +1,27 @@
+{
+  "name": "@toasty-engine/gpu-buffer",
+  "description": "A utility package for creating and managing WebGPU buffers with TypeScript. This package provides a set of helper functions to simplify buffer creation in WebGPU applications.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/story75/toasty-engine.git",
+    "directory": "packages/gpu-buffer"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/esm.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc"
+  },
+  "dependencies": {
+    "@webgpu/types": "^0.1.52",
+    "@toasty-engine/cli": "workspace:*"
+  }
+}
