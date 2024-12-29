@@ -22,24 +22,6 @@ export function indexBufferAllocator(device: GPUDevice) {
 }
 
 /**
- * Creates a storage buffer allocator for the given device.
- *
- * @remarks
- * Passed data is not mapped to the GPU buffer, but only used for sizing.
- * The buffer has to be written to manually via device.queue.writeBuffer.
- *
- * @param device - The GPU device.
- */
-export function storageBufferAllocator(device: GPUDevice) {
-  return (data: Float32Array): GPUBuffer => {
-    return device.createBuffer({
-      size: data.byteLength,
-      usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST,
-    });
-  };
-}
-
-/**
  * Creates a texture allocator for the given device.
  *
  * @remarks
@@ -69,24 +51,6 @@ export function textureAllocator(device: GPUDevice) {
 }
 
 /**
- * Creates a uniform buffer allocator for the given device.
- *
- * @remarks
- * Passed data is not mapped to the GPU buffer, but only used for sizing.
- * The buffer has to be written to manually via device.queue.writeBuffer.
- *
- * @param device - The GPU device.
- */
-export function uniformBufferAllocator(device: GPUDevice) {
-  return (data: Float32Array | Uint32Array): GPUBuffer => {
-    return device.createBuffer({
-      size: data.byteLength,
-      usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
-    });
-  };
-}
-
-/**
  * Creates a vertex buffer allocator for the given device.
  *
  * @remarks
@@ -104,5 +68,47 @@ export function vertexBufferAllocator(device: GPUDevice) {
     new Float32Array(buffer.getMappedRange()).set(data);
     buffer.unmap();
     return buffer;
+  };
+}
+
+/**
+ * Creates a storage buffer allocator for the given device.
+ *
+ * @remarks
+ * Passed data is not mapped to the GPU buffer, but only used for sizing.
+ * The buffer has to be written to manually via device.queue.writeBuffer.
+ *
+ * In most applications, you will want to pre-allocate the buffer with a size that is large enough
+ * to hold the data you want to store over the lifetime of the application to avoid rebinding the buffer between frames.
+ *
+ * @param device - The GPU device.
+ */
+export function storageBufferAllocator(device: GPUDevice) {
+  return (data: Float32Array): GPUBuffer => {
+    return device.createBuffer({
+      size: data.byteLength,
+      usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST,
+    });
+  };
+}
+
+/**
+ * Creates a uniform buffer allocator for the given device.
+ *
+ * @remarks
+ * Passed data is not mapped to the GPU buffer, but only used for sizing.
+ * The buffer has to be written to manually via device.queue.writeBuffer.
+ *
+ * In most applications, you will want to pre-allocate the buffer with a size that is large enough
+ * to hold the data you want to store over the lifetime of the application to avoid rebinding the buffer between frames.
+ *
+ * @param device - The GPU device.
+ */
+export function uniformBufferAllocator(device: GPUDevice) {
+  return (data: Float32Array | Uint32Array): GPUBuffer => {
+    return device.createBuffer({
+      size: data.byteLength,
+      usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
+    });
   };
 }

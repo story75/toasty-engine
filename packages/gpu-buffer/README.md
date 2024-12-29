@@ -56,7 +56,17 @@ const vertexBuffers = [
 const vertexBuffer = vertexBuffers[0];
 device.queue.writeBuffer(vertexBuffer, 0, batch.vertices);
 
-// storage buffers and uniform buffers are handled in a similar way
+// storage buffers and uniform buffers are handled in a similar way to vertex buffers
+const storageData = new Float32Array(MAX_SPRITES_PER_BATCH * FLOATS_PER_SPRITE);
+const storageBuffer = storageBufferAlloc(storageData);
+// later, when you want to update the buffer
+device.queue.writeBuffer(storageBuffer, 0, storageData);
+
+// uniform buffers are handled in a similar way to vertex buffers
+const viewMatrix = new Float32Array(16);
+const uniformBuffer = uniformBufferAlloc(viewMatrix);
+// later, when you want to update the buffer
+device.queue.writeBuffer(uniformBuffer, 0, viewMatrix);
 
 // for texture buffers we need texture data first
 // assume you fetched some texture data from a server
