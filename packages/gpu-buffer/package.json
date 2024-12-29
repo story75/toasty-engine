@@ -21,7 +21,9 @@
     "check": "tsc"
   },
   "dependencies": {
-    "@webgpu/types": "^0.1.52",
+    "@webgpu/types": "^0.1.52"
+  },
+  "devDependencies": {
     "@toasty-engine/cli": "workspace:*"
   }
 }
