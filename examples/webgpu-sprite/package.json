@@ -1,0 +1,20 @@
+{
+  "name": "@toasty-engine-example/webgpu-sprite",
+  "description": "An example to show the basics sprite rendering with WebGPU",
+  "license": "MIT",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "wgpu-matrix": "^3.3.0"
+  },
+  "devDependencies": {
+    "@webgpu/types": "^0.1.52",
+    "vite": "^6.0.5"
+  }
+}

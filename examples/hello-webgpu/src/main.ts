@@ -10,14 +10,14 @@ if (!context) {
   throw new Error('WebGPU context not found');
 }
 
-const presentationFormat = navigator.gpu.getPreferredCanvasFormat();
-
 const adapter = await navigator.gpu.requestAdapter();
 if (!adapter) {
   throw new Error('Could not request WebGPU adapter!');
 }
 
 const device = await adapter.requestDevice();
+
+const presentationFormat = navigator.gpu.getPreferredCanvasFormat();
 
 context.configure({
   device,
