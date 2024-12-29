@@ -84,3 +84,4 @@ Documentation:
 - Include clear descriptions of new features and how to use them
 - Keep the documentation in sync with the codebase
 - Add examples where appropriate
+- No not use "we" when referring to the project maintainer use "I" instead.

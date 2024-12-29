@@ -8,7 +8,7 @@ This guide will help you get started with developing and contributing to the pro
 
 ## Prerequisites
 
-Before you start, make sure you have the following tools installed:
+Before you start, make sure you are familiar with the following tools:
 
 -   **[Bun](https://bun.sh/)**: A fast JavaScript runtime and package manager.
 -   **[Turborepo](https://turbo.build/repo/docs)**: A high-performance build system for monorepos.
@@ -32,10 +32,15 @@ The project is organized into the following directories:
 
 ## Understanding Packages
 
-The project is divided into multiple packages, each treated as an independent project. This approach promotes separation of concerns and makes the project easier to manage.
+The project is divided into multiple packages, each treated as an independent project.
+This approach promotes separation of concerns and makes the project easier to manage.
+It also enables people who do not want to opt-in to the entire project to use individual packages.
+
+Before creating a package, start by building a small demo or project to validate your desired functionality.
+This will help you understand the requirements and constraints of the package you are creating.
+Avoid over-abstracting too early, as this can lead to unnecessary complexity.
 
 Each package should have its own `README.md` file explaining its purpose and usage, as packages may be used independently.
 
 Make sure to include relevant documentation comments using the [TSDoc](https://tsdoc.org/) standard.
-
 More detailed documentation should be written in the Starlight documentation located in the `documentation` directory.
