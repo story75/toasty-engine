@@ -19,6 +19,7 @@ export default defineConfig({
           items: [
             { label: 'Getting started', slug: 'users/getting-started' },
             { label: 'Packages', slug: 'users/packages' },
+            { label: 'Examples', slug: 'users/examples' },
           ],
         },
         {

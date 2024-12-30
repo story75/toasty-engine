@@ -1,6 +1,6 @@
 {
   "name": "@toasty-engine-example/hello-webgpu",
-  "description": "An example to show the basics of raw WebGPU with TypeScript",
+  "description": "An example to show the basics of raw WebGPU with TypeScript in the most simple way.",
   "license": "MIT",
   "private": true,
   "version": "0.0.0",

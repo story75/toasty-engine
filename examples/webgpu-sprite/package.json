@@ -1,6 +1,6 @@
 {
   "name": "@toasty-engine-example/webgpu-sprite",
-  "description": "An example to show the basics sprite rendering with WebGPU",
+  "description": "An example to show the basics sprite rendering with raw WebGPU with some techniques and pitfalls to watch out for.",
   "license": "MIT",
   "private": true,
   "version": "0.0.0",

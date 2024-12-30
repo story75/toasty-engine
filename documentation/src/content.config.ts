@@ -12,4 +12,11 @@ export const collections = {
       description: z.string(),
     }),
   }),
+  examples: defineCollection({
+    loader: glob({ pattern: '*/package.json', base: './src/data/examples' }),
+    schema: z.object({
+      name: z.string(),
+      description: z.string(),
+    }),
+  }),
 };

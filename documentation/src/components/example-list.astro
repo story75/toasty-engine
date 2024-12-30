@@ -1,14 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
-const packages = await getCollection('packages');
+const examples = await getCollection('examples');
 
 const githubUrl = (filePath: string) => {
   return `https://github.com/story75/toasty-engine/tree/main/${filePath.replace('src/data/', '').replace('package.json', '')}`;
 };
 ---
 
-{packages.map(packageJson => (<div>
-    <h2 id={packageJson.id}><a href={"https://npmjs.com/package/" + packageJson.data.name}>{packageJson.data.name}</a></h2>
+{examples.map(packageJson => (<div>
+    <h2 id={packageJson.id}>{packageJson.data.name}</h2>
     <a href={githubUrl(packageJson.filePath)}>View source code on Github</a>
     <p>{packageJson.data.description}</p>
 </div>))}

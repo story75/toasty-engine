@@ -186,7 +186,7 @@ const depthTexture = device.createTexture({
   usage: GPUTextureUsage.RENDER_ATTACHMENT,
 });
 
-// Since we just want to convert screenspace directly to clipspace, we can just use the orthographic projection matrix without a lookAt matrix
+// Since we just want to convert screen space directly to clip space, we can just use the orthographic projection matrix without a lookAt matrix
 const projectionViewMatrix = mat4.ortho(0, context.canvas.width, context.canvas.height, 0, -1, 1);
 const projectionViewMatrixUniformBuffer = device.createBuffer({
   size: projectionViewMatrix.byteLength,
