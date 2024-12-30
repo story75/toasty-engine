@@ -29,7 +29,7 @@ context.configure({
 // CAUTION: this is not the whole story, because for devices with a high dpi, the canvas size will be larger than the window size
 // for those cases you have to shrink the canvas back down to the window size to achieve the correct scaling
 // so e.g. if the pixel ratio is 2, you have to set the canvas to width=window.innerWidth * 2 and height=window.innerHeight * 2
-// while simultaneously setting the canvas size to width={window.innerWidth}px and height={window.innerHeight}px to achive the requiered pixel density
+// while simultaneously setting the canvas size to width={window.innerWidth}px and height={window.innerHeight}px to achieve the required pixel density
 const devicePixelRatio = window.devicePixelRatio;
 canvas.width = window.innerWidth * devicePixelRatio;
 canvas.height = window.innerHeight * devicePixelRatio;
@@ -127,7 +127,7 @@ const shaderModule = device.createShaderModule({
       @vertex
       fn vs_main(@builtin(vertex_index) vertex_index: u32, @builtin(instance_index) instance_index: u32) -> VertexOutput {
         // Because we know we are only ever going to draw quads,
-        // we can hardcode some data into the shader like the inidicies, uvs and positions without explicitly passing them in
+        // we can hardcode some data into the shader like the indices, uvs and positions without explicitly passing them in
         // this saves a lot of bandwidth for big batches of sprites
       const indices = array(0, 1, 2, 2, 3, 0);
       
