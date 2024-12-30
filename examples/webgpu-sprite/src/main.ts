@@ -2,6 +2,7 @@
 import './style.css';
 import { mat4 } from 'wgpu-matrix';
 
+// Initialize WebGPU context and verify browser support
 const canvas = document.querySelector('canvas');
 if (!canvas) {
   throw new Error('Canvas not found');
@@ -11,6 +12,7 @@ if (!context) {
   throw new Error('WebGPU context not found');
 }
 
+// Request GPU adapter and device - this represents the physical GPU and its capabilities
 const adapter = await navigator.gpu.requestAdapter();
 if (!adapter) {
   throw new Error('Could not request WebGPU adapter!');
@@ -18,6 +20,7 @@ if (!adapter) {
 
 const device = await adapter.requestDevice();
 
+// Configure the canvas format and alpha blending mode for proper transparency handling
 const presentationFormat = navigator.gpu.getPreferredCanvasFormat();
 
 context.configure({
@@ -34,9 +37,15 @@ const devicePixelRatio = window.devicePixelRatio;
 canvas.width = window.innerWidth * devicePixelRatio;
 canvas.height = window.innerHeight * devicePixelRatio;
 
+// Load and create texture from image
 const response = await fetch('/toasty-logo.png');
 const blob = await response.blob();
 const imageBitmap = await createImageBitmap(blob);
+
+// Create texture with specific format and usage flags:
+// - TEXTURE_BINDING: allows the texture to be bound to a shader
+// - COPY_DST: allows copying data into the texture
+// - RENDER_ATTACHMENT: allows the texture to be used as a render target
 const texture = device.createTexture({
   size: [imageBitmap.width, imageBitmap.height, 1],
   format: 'rgba8unorm',
@@ -75,6 +84,9 @@ const instanceStorageBuffer = device.createBuffer({
   size: sprites.length * 4 * Float32Array.BYTES_PER_ELEMENT,
   usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST,
 });
+
+// Helper function to update sprite data in the GPU buffer
+// Only transfers position and size data, velocity is handled in JS
 const writeInstanceBuffer = () => {
   // not all data is written to the buffer, always keep in mind what you need the gpu to know and what is just for your JS game logic
   device.queue.writeBuffer(
@@ -98,29 +110,37 @@ const sampler = device.createSampler({
   minFilter: 'nearest',
 });
 
+// Create shader module with vertex and fragment shaders
+// The vertex shader handles sprite positioning and UV mapping
+// The fragment shader handles texture sampling and transparency
 // The shader is inlined to make the vite setup work without any modifications
 // Normally you should change your config to import wgsl files as strings
 const shaderModule = device.createShaderModule({
   code: `
+    // Define the structure for sprite instance data passed from CPU to GPU
     struct Instance {
         position: vec2f,
         size: vec2f,
     }
 
+    // Define the vertex shader output structure that will be passed to the fragment shader
     struct VertexOutput {
         @builtin(position) position: vec4f,
         @location(0) uv: vec2f,
     }
 
+    // Bind groups define how shader resources are organized and accessed
+    // Bind group 0: Camera and view matrices
     @group(0) @binding(0)
     var<uniform> projection_view_matrix: mat4x4f;
 
+    // Bind group 1: Texture resources
     @group(1) @binding(0)
     var texture_sampler: sampler;
-
     @group(1) @binding(1)
     var texture: texture_2d<f32>;
 
+    // Bind group 2: Instance data
     @group(2) @binding(0)
     var<storage, read> instances: array<Instance>;
 
