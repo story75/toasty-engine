@@ -19,6 +19,22 @@ Take some time to familiarize yourself with these tools by visiting the links pr
 
 The project is written in [TypeScript](https://www.typescriptlang.org/) and uses [WebGPU](https://www.w3.org/TR/webgpu/) for rendering.
 
+## Development Setup
+
+1. Fork and clone the repository
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+3. Bundle all packages:
+   ```bash
+   bun bundle
+   ```
+4. Run tests to verify your setup:
+   ```bash
+   bun test
+   ```
+
 ## Project Structure
 
 The project is organized into the following directories:
@@ -44,3 +60,42 @@ Each package should have its own `README.md` file explaining its purpose and usa
 
 Make sure to include relevant documentation comments using the [TSDoc](https://tsdoc.org/) standard.
 More detailed documentation should be written in the Starlight documentation located in the `documentation` directory.
+
+If possible refrain from depending on other packages, especially third party packages if they are not absolutely necessary.
+If necessary, create a new package for the functionality you need.
+Avoiding dependencies on other packages will make the project more modular and easier to manage,
+and allow for outside users to use individual packages more easily.
+
+## Coding Standards
+
+- Use TypeScript's strict mode and avoid using `any`
+- Follow functional programming principles where possible
+- Write descriptive variable names with auxiliary verbs (e.g., `isLoading`, `hasRendered`)
+- Keep functions small and focused on a single responsibility
+- Use meaningful commit messages following conventional commits
+- Document public APIs with TSDoc comments
+- Colocate tests with the code they test
+
+## Testing
+
+The project uses Bun for testing via the `bun:test` module.
+
+Each package should have its own test suite to ensure that it works as expected and where possible, to prevent regressions.
+Timing related functions, that depend on the system clock, [should be mocked with setSystemTime to ensure consistent test results](https://bun.sh/docs/test/time#setsystemtime).
+
+Test files should:
+- Be named `*.test.ts`
+- Be located next to the file they test
+- Include both unit and integration tests where appropriate
+- Mock external dependencies and time-based functions
+- Test edge cases and error conditions
+
+## Contribution Workflow
+
+1. Create a new branch for your feature or fix
+2. Make your changes following the coding standards
+3. Add or update tests to cover your changes
+4. Run `bun lint` to ensure code quality
+5. Update documentation if needed
+6. Submit a pull request with a clear description of your changes
+7. Respond to review feedback and make necessary adjustments
