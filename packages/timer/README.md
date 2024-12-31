@@ -61,7 +61,7 @@ loop();
 await waitForMilliseconds(1000); // wait for 1 second
 
 // Or you may somewhere have to wait for a certain amount of in-game ticks to have passed
-await gameTimer.waitForTicks(60); // wait for 60 ticks to have passed, this may be more than 60 update calls if the game is lagging or with more or less speed
+await gameTimer.waitForTicks(60); // wait for 60 ticks to have passed, this may be more than 60 update calls if the game is lagging or running with less speed
 ```
 
 ## License
