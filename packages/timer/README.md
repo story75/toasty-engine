@@ -3,21 +3,26 @@
 <!-- automd:badges color="yellow" name="@toasty-engine/timer" license codecov no-npmDownloads -->
 <!-- /automd -->
 
-A utility package for managing timers in game development. This package provides a set of helper functions to simplify time management.
+A utility package for managing time and timers in game development. This package provides robust tools for frame-rate independent timing, FPS tracking, and event scheduling.
 
 ## Features
 
-- 🕒 Timer class for managing time in game development
-- 🚀 Timing function agnostic, works with any rendering loop
+- ⏱️ Frame-rate independent timing with delta time calculations
+- 🎮 Game-specific Timer class for events, animations, and cooldowns
+- 📊 FPS tracking with smoothing for stable display
+- ⚡ High-performance time management optimized for games
+- 🔄 Support for repeating and one-shot timers
+- ⏲️ Utility functions for time-based operations
 
 ## Why should I use this?
 
-When working with games that render at 60 fps in a browser, you need to manage time to ensure that animations and game logic run smoothly.
-To do this you have to account for lag and frame rate drops. This package provides a simple way to manage time in your game,
-so you can just multiply your game logic by the delta time to ensure smooth animations.
+When developing games that target specific frame rates (e.g., 60 FPS), proper time management is crucial for:
+- Ensuring smooth animations regardless of frame rate fluctuations
+- Maintaining consistent game speed across different devices
+- Accurately timing game events and cooldowns
+- Monitoring performance through FPS tracking
 
-You can also use the timer to wait for a certain amount of time to pass in-game ticks or real time.
-This is especially useful when orchestrating game events or waiting for animations to finish.
+This package provides a complete solution for time management in games, handling edge cases and providing a simple API for common timing needs.
 
 ## Installation
 
@@ -27,41 +32,76 @@ bun add @toasty-engine/timer
 
 ## Usage
 
+### Basic Time Management
+
 ```typescript
-import { Timer, waitForMilliseconds } from '@toasty-engine/timer';
+import { Time } from '@toasty-engine/timer';
 
-// Create a global timer for all your timing needs
-const timer = new Timer();
-// You can also create a separate timer for game logic if you want to separate game logic from rendering
-// For example if you have a menu that pauses the game, but menu animations should still run
-const gameTimer = new Timer();
-// You can also change the "speedFactor" to offer options like "gameSpeed" to allow the player to speed up or slow down the game
-gameTimer.speedFactor = 2; // game runs at double speed
+// Create a time manager (optionally configure FPS smoothing factor)
+const time = new Time(0.9); // 0.9 = more smooth, 0.1 = more reactive
 
-// If you want to track fps over time to display it in a graph
-const fpsOverTime = [];
+function gameLoop(now: number) {
+  // Update timing metrics
+  const deltaTime = time.update(now);
+  
+  // Access timing information
+  console.log(time.framesPerSecond);        // Current FPS
+  console.log(time.framesPerSecondSmoothed); // Smoothed FPS for display
+  console.log(time.frameTimeInMilliseconds); // Raw frame time
+  
+  // Use deltaTime for frame-rate independent movement
+  player.x += speed * deltaTime; // Consistent speed regardless of FPS
+  
+  requestAnimationFrame(gameLoop);
+}
 
-const loop = (now: number) => {
-  const deltaTime = timer.update(now);
-  const gameDeltaTime = gameTimer.update(now);
-  // or read delta time directly from timer
-  // const deltaTime = timer.deltaTime;
-    
-  // or read other timer values
-  const fps = timer.framesPerSecondSmoothed; // if you want to just display a single number use the smoothed value
-  fpsOverTime.push(timer.framesPerSecond); // if you want to track fps over time use the exact value
-    
-  // Your game logic here
-  // e.g. sprite.x += 10 * deltaTime; // move sprite roughly 10 pixels per frame
-  requestAnimationFrame(loop);
-};
-loop();
+requestAnimationFrame(gameLoop);
+```
 
-// You may have other logic somewhere that is bound by real time that you have to wait for
-await waitForMilliseconds(1000); // wait for 1 second
+### Using Timers for Events
 
-// Or you may somewhere have to wait for a certain amount of in-game ticks to have passed
-await gameTimer.waitForTicks(60); // wait for 60 ticks to have passed, this may be more than 60 update calls if the game is lagging or running with less speed
+```typescript
+import { Timer } from '@toasty-engine/timer';
+
+// Create a 2-second timer (at 60 FPS)
+const cooldownTimer = Timer.fromSeconds(2);
+
+// Or create a timer with specific ticks
+const attackTimer = new Timer(30); // 30 ticks (0.5 seconds at 60 FPS)
+
+// Create a repeating timer for spawning enemies
+const spawnTimer = new Timer(120, true); // Repeats every 120 ticks
+
+function gameLoop(now: number) {
+  // Update timers with delta time
+  cooldownTimer.update(deltaTime);
+  attackTimer.update(deltaTime);
+  spawnTimer.update(deltaTime);
+  
+  // Check timer states
+  if (cooldownTimer.isFinished()) {
+    enableAbility();
+  }
+  
+  // Perfect for repeating events
+  if (spawnTimer.hasJustFinished()) {
+    spawnEnemy(); // Called exactly when timer completes
+  }
+  
+  requestAnimationFrame(gameLoop);
+}
+```
+
+### Utility Functions
+
+```typescript
+import { waitForMilliseconds } from '@toasty-engine/timer';
+
+async function gameSequence() {
+  showIntro();
+  await waitForMilliseconds(1000); // Wait for 1 second
+  startGame();
+}
 ```
 
 ## License

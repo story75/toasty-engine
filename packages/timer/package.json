@@ -1,6 +1,6 @@
 {
   "name": "@toasty-engine/timer",
-  "description": "A utility package for managing timers in game development. This package provides a set of helper functions to simplify time management.",
+  "description": "A utility package for managing time and timers in game development. This package provides robust tools for frame-rate independent timing, FPS tracking, and event scheduling.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/story75/toasty-engine.git",
