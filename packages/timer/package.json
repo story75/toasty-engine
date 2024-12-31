@@ -1,0 +1,26 @@
+{
+  "name": "@toasty-engine/timer",
+  "description": "A utility package for managing timers in game development. This package provides a set of helper functions to simplify time management.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/story75/toasty-engine.git",
+    "directory": "packages/timer"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/esm.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc"
+  },
+  "devDependencies": {
+    "@toasty-engine/cli": "workspace:*"
+  }
+}
