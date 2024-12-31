@@ -35,7 +35,7 @@ const timer = new Timer();
 // You can also create a separate timer for game logic if you want to separate game logic from rendering
 // For example if you have a menu that pauses the game, but menu animations should still run
 const gameTimer = new Timer();
-// You can also change the "speedFactor" offer options like "gameSpeed" to allow the player to speed up or slow down the game
+// You can also change the "speedFactor" to offer options like "gameSpeed" to allow the player to speed up or slow down the game
 gameTimer.speedFactor = 2; // game runs at double speed
 
 // If you want to track fps over time to display it in a graph
