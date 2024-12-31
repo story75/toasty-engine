@@ -1,11 +1,6 @@
 # @toasty-engine/gpu-buffer
     
 <!-- automd:badges color="yellow" name="@toasty-engine/gpu-buffer" license codecov no-npmDownloads -->
-
-[![npm version](https://img.shields.io/npm/v/@toasty-engine/gpu-buffer?color=yellow)](https://npmjs.com/package/@toasty-engine/gpu-buffer)
-[![codecov](https://img.shields.io/codecov/c/gh/story75/toasty-engine?color=yellow)](https://codecov.io/gh/story75/toasty-engine)
-[![license](https://img.shields.io/github/license/story75/toasty-engine?color=yellow)](https://github.com/story75/toasty-engine/blob/main/LICENSE)
-
 <!-- /automd -->
 
 A utility package for creating and managing WebGPU buffers with TypeScript. This package provides a set of helper functions to simplify buffer creation in WebGPU applications.
@@ -84,19 +79,7 @@ const textureBuffer = textureAlloc(imageBitmap);
 This package is part of the Toasty Engine project and is licensed under the MIT License.
 
 <!-- automd:contributors author="story75" -->
-
-Made by [@story75](https://github.com/story75) and [community](https://github.com/story75/toasty-engine/graphs/contributors) 💛
-<br><br>
-<a href="https://github.com/story75/toasty-engine/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=story75/toasty-engine" />
-</a>
-
 <!-- /automd -->
 
 <!-- automd:with-automd -->
-
----
-
-_🤖 auto updated with [automd](https://automd.unjs.io)_
-
 <!-- /automd -->

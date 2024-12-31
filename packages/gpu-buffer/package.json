@@ -18,7 +18,8 @@
     }
   },
   "scripts": {
-    "check": "tsc"
+    "check": "tsc",
+    "bundle": "toasty-cli bundle"
   },
   "dependencies": {
     "@webgpu/types": "^0.1.52"
