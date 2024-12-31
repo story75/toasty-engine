@@ -37,14 +37,14 @@ export class Timer {
   framesPerSecondSmoothed = 0;
 
   /**
-   * The time dilation factor
+   * The speed factor
    *
    * @remarks
-   * The time dilation factor is used to speed up or slow down the time measured by the timer.
-   * For example, if you set the time dilation factor to 2, then the time measured by the timer will be twice as fast.
-   * If you set the time dilation factor to 0.5, then the time measured by the timer will be half as fast.
+   * The speed factor is used to speed up or slow down the time measured by the timer.
+   * For example, if you set the speed factor to 2, then the time measured by the timer will be twice as fast.
+   * If you set the speed factor to 0.5, then the time measured by the timer will be half as fast.
    */
-  timeDilation = 1;
+  speedFactor = 1;
 
   /**
    * The subscribers to the ticker
@@ -59,7 +59,8 @@ export class Timer {
    * You will only ever need to change targetFrameRate if you want to target a different frame rate
    * with a different render loop instead of requestAnimationFrame.
    *
-   * The smoothing factor is used to smooth out the frames per second. The higher will smooth out the frames per second more.
+   * The smoothing factor is used to smooth out the frames per second.
+   * A higher value will smooth out the frames per second more resulting in a less jittery value to display.
    */
   constructor(
     public readonly targetFrameRate = 0.06,
@@ -76,7 +77,7 @@ export class Timer {
    */
   update(now: number): number {
     this.frameTimeInMilliseconds = now - this.lastFrameTimeInMilliseconds;
-    this.deltaTime = this.frameTimeInMilliseconds * this.targetFrameRate * this.timeDilation;
+    this.deltaTime = this.frameTimeInMilliseconds * this.targetFrameRate * this.speedFactor;
     this.lastFrameTimeInMilliseconds = now;
 
     const framesPerSecond = 1000 / this.frameTimeInMilliseconds;
