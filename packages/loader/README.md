@@ -3,7 +3,7 @@
 <!-- automd:badges color="yellow" name="@toasty-engine/loader" license codecov no-npmDownloads -->
 <!-- /automd -->
 
-A utility package for loading assets in game development. This package provides simple tools for loading textures and fonts for use in WebGPU games.
+A utility package for loading assets in game development. This package provides simple tools for loading textures and fonts for use in games.
 
 ## Features
 

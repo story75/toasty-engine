@@ -1,10 +1,10 @@
 {
-  "name": "@toasty-engine/loader",
-  "description": "A utility package for loading assets in game development. This package provides simple tools for loading textures and fonts for use in games.",
+  "name": "@toasty-engine/canvas-text",
+  "description": "A utility package for creating textures from text in game development. This package provides tools for rendering text to canvas elements, which can then be used as textures in games.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/story75/toasty-engine.git",
-    "directory": "packages/loader"
+    "directory": "packages/canvas-text"
   },
   "license": "MIT",
   "main": "dist/index.js",
