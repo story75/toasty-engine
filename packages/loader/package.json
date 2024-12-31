@@ -1,0 +1,27 @@
+{
+  "name": "@toasty-engine/loader",
+  "description": "A utility package for loading images and font to be used in games",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/story75/toasty-engine.git",
+    "directory": "packages/loader"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/esm.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc",
+    "bundle": "toasty-cli bundle"
+  },
+  "devDependencies": {
+    "@toasty-engine/cli": "workspace:*"
+  }
+}
