@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { bundle } from './commands/bundle';
-import { readme } from './commands/readme';
+import { bundle } from './commands/bundle/bundle';
+import { readme } from './commands/readme/readme';
 
 const cli = yargs(hideBin(Bun.argv))
   .scriptName('toasty-cli')
