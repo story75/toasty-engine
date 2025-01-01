@@ -17,8 +17,7 @@ jobs:
       - run: bun install # renovate does not update the lockfile properly, so --frozen-lockfile would break dependency updates
       - run: bun bundle
       - run: bun lint
-      - uses: paambaati/codeclimate-action@v2.2.4
-        env:
-          CC_TEST_REPORTER_ID: 945dfb58a832d233a3caeb84e3e6d3be212e8c7abcb48117fce63b9adcb43647
+      - uses: paambaati/codeclimate-action@v9
         with:
           coverageCommand: bun run test # bun test is insufficient for meaningful coverage reports see https://github.com/oven-sh/bun/issues/5928
+          coverageLocations: ${{github.workspace}}/coverage/*.lcov:lcov
