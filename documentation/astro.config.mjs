@@ -7,6 +7,8 @@ import starlightLinksValidator from 'starlight-links-validator';
 import starlightTypeDoc, { typeDocSidebarGroup } from 'starlight-typedoc';
 
 export default defineConfig({
+  site: 'https://story75.github.io',
+  base: '/toasty-engine',
   integrations: [
     starlight({
       plugins: [
