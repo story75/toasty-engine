@@ -5,6 +5,8 @@ import { TARGET_FRAME_RATE_FACTOR } from './target-frame-rate';
  * Used to ensure consistent game speed regardless of frame rate fluctuations.
  */
 export class Time {
+  private _deltaTime = 0;
+
   /**
    * Scaling factor for frame-rate independent movement and animations.
    *
@@ -13,40 +15,43 @@ export class Time {
    * - Value of 0.5: Running twice as fast as target (multiply speeds by 0.5 to compensate)
    * - Value of 2.0: Running half as fast as target (multiply speeds by 2.0 to compensate)
    */
-  private _deltaTime = 0;
   get deltaTime(): number {
     return this._deltaTime;
   }
 
+  private _frameTimeInMilliseconds = 0;
+
   /**
    * Time elapsed between the current and previous frame in milliseconds.
    */
-  private _frameTimeInMilliseconds = 0;
   get frameTimeInMilliseconds(): number {
     return this._frameTimeInMilliseconds;
   }
 
+  private _lastFrameTimeInMilliseconds: number;
+
   /**
    * Timestamp of the previous frame in milliseconds.
    */
-  private _lastFrameTimeInMilliseconds: number;
   get lastFrameTimeInMilliseconds(): number {
     return this._lastFrameTimeInMilliseconds;
   }
 
+  private _framesPerSecond = 0;
+
   /**
    * Current frames per second (FPS), updated each frame.
    */
-  private _framesPerSecond = 0;
   get framesPerSecond(): number {
     return this._framesPerSecond;
   }
+
+  private _framesPerSecondSmoothed = 0;
 
   /**
    * Smoothed frames per second value to reduce display jitter.
    * Uses exponential moving average for stability.
    */
-  private _framesPerSecondSmoothed = 0;
   get framesPerSecondSmoothed(): number {
     return this._framesPerSecondSmoothed;
   }

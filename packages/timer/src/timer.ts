@@ -18,9 +18,6 @@ import { TARGET_FRAME_RATE } from './target-frame-rate';
  * ```
  */
 export class Timer {
-  /**
-   * Internal counter for elapsed ticks.
-   */
   private _elapsedTicks = 0;
 
   /**

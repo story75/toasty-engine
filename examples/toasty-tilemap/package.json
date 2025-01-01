@@ -1,0 +1,22 @@
+{
+  "name": "@toasty-engine-example/toasty-tilemap",
+  "description": "A prototype tilemap renderer for the Toasty Engine.",
+  "license": "MIT",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@toasty-engine/gpu-buffer": "workspace:*",
+    "@toasty-engine/loader": "workspace:*",
+    "@toasty-engine/math": "workspace:*",
+    "@toasty-engine/timer": "workspace:*"
+  },
+  "devDependencies": {
+    "@webgpu/types": "^0.1.52"
+  }
+}
