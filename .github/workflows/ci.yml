@@ -17,9 +17,4 @@ jobs:
       - run: bun install # renovate does not update the lockfile properly, so --frozen-lockfile would break dependency updates
       - run: bun bundle
       - run: bun lint
-      - run: bun test
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ./coverage
+      - run: bun run test # bun test is insufficient for meaningful coverage reports see https://github.com/oven-sh/bun/issues/5928

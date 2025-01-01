@@ -63,9 +63,10 @@ Testing and Quality Assurance:
 - Set up automated builds and testing in the CI/CD pipeline
 - Use global error and alert handlers.
 - Integrate a crash reporting service for the application.
-- Use bun:test for testing.
+- Use Vitest for testing.
 - Always colocate tests with the code they are testing.
 - Verify that the tests are working by running them.
+- Only use browser specific APIs in `*.browser.test.ts` files.
 
 When suggesting code or solutions:
 1. First, analyze the existing code structure and performance implications.

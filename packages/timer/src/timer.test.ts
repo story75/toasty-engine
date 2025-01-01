@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'bun:test';
+import { describe, expect, test } from 'vitest';
 import { TARGET_FRAME_RATE } from './target-frame-rate';
 import { Timer } from './timer';
 

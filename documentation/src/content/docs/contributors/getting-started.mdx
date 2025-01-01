@@ -14,6 +14,7 @@ Before you start, make sure you are familiar with the following tools:
 -   **[Turborepo](https://turbo.build/repo/docs)**: A high-performance build system for monorepos.
 -   **[Biome](https://biomejs.dev/)**: A toolchain for web development, including a formatter and linter.
 -   **[Astro Starlight](https://starlight.astro.build/)**: A documentation site generator.
+-   **[Vitest](https://vitest.dev/)**: A test framework for JavaScript and TypeScript.
 
 Take some time to familiarize yourself with these tools by visiting the links provided. They are essential for developing and contributing to the project.
 
@@ -32,7 +33,7 @@ The project is written in [TypeScript](https://www.typescriptlang.org/) and uses
    ```
 4. Run tests to verify your setup:
    ```bash
-   bun test
+   bun run test
    ```
 
 ## Project Structure
@@ -78,17 +79,19 @@ and allow for outside users to use individual packages more easily.
 
 ## Testing
 
-The project uses Bun for testing via the `bun:test` module.
+The project uses [Vitest](https://vitest.dev/) for testing.
 
 Each package should have its own test suite to ensure that it works as expected and where possible, to prevent regressions.
-Timing related functions, that depend on the system clock, [should be mocked with setSystemTime to ensure consistent test results](https://bun.sh/docs/test/time#setsystemtime).
+Timing related functions, that depend on the system clock, should be mocked using [Vitest's date mocking](https://vitest.dev/guide/mocking.html#dates).
 
 Test files should:
-- Be named `*.test.ts`
+- Be named `*.test.ts` or `*.browser.test.ts`
 - Be located next to the file they test
 - Include both unit and integration tests where appropriate
 - Mock external dependencies and time-based functions
 - Test edge cases and error conditions
+- Only use browser specific APIs in `*.browser.test.ts` files
+- Only resort to `*.browser.test.ts` if absolutely necessary e.g. when drawing to the screen
 
 ## Contribution Workflow
 
