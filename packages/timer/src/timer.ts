@@ -63,6 +63,7 @@ export class Timer {
    * It is equivalent to `new Timer(seconds * TARGET_FRAME_RATE)`.
    *
    * @param seconds - The number of seconds to count towards.
+   * @param repeating - When true, the timer will automatically reset when finished.
    * @returns A new Timer instance.
    */
   static fromSeconds(seconds: number, repeating = false): Timer {

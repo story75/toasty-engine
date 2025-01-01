@@ -54,7 +54,7 @@ export class Time {
   /**
    * Creates a new Time instance for frame timing management.
    *
-   * @param smoothingFactor - Controls FPS smoothing (0.9 = more smooth, 0.1 = more reactive).
+   * @param _smoothingFactor - Controls FPS smoothing (0.9 = more smooth, 0.1 = more reactive).
    */
   constructor(private readonly _smoothingFactor = 0.9) {
     this._lastFrameTimeInMilliseconds = performance.now();
