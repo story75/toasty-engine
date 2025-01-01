@@ -20,4 +20,4 @@ jobs:
       - uses: paambaati/codeclimate-action@v9
         with:
           coverageCommand: bun run test # bun test is insufficient for meaningful coverage reports see https://github.com/oven-sh/bun/issues/5928
-          coverageLocations: ${{github.workspace}}/coverage/*.lcov:lcov
+          coverageLocations: ${{github.workspace}}/coverage/clover.xml:clover
