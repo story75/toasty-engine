@@ -14,7 +14,7 @@ export default defineConfig({
       plugins: [
         starlightLinksValidator({
           errorOnRelativeLinks: false,
-          exclude: ['/api/**/*'],
+          exclude: ['/toasty-engine/api/**/*'],
         }),
         starlightHeadingBadges(),
         starlightTypeDoc({
