@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+permissions:
+  contents: read
+jobs:
+  test:
+    name: Format, Lint, Typecheck, and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      # run scripts
+      - run: bun install # renovate does not update the lockfile properly, so --frozen-lockfile would break dependency updates
+      - run: bun bundle
+      - run: bun lint
+      - run: bun test
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
