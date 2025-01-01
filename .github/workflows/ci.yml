@@ -21,3 +21,5 @@ jobs:
         with:
           coverageCommand: bun run test # bun test is insufficient for meaningful coverage reports see https://github.com/oven-sh/bun/issues/5928
           coverageLocations: ${{github.workspace}}/coverage/clover.xml:clover
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
