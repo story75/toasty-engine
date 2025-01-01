@@ -8,8 +8,9 @@ const githubUrl = (filePath: string) => {
 ---
 
 {packages.map(packageJson => (<div>
-    <h2 id={packageJson.id}><a href={"https://npmjs.com/package/" + packageJson.data.name}>{packageJson.data.name}</a></h2>
-    <a href={githubUrl(packageJson.filePath)}>View source code on Github</a>
+    <h2 id={packageJson.id}>{packageJson.data.name}</h2>
+    <a href={githubUrl(packageJson.filePath)}>View source code on Github</a> -
+    <a href={"https://npmjs.com/package/" + packageJson.data.name}>View package code on NPM</a>
     <p>{packageJson.data.description}</p>
 </div>))}
 
