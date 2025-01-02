@@ -9,6 +9,18 @@ This example tries to find the requiered building blocks to create a tilemap ren
 This example is based on the webgpu-sprite example. This prototype will refine the example and be used as a playground for new features.
 The goal is to create a tilemap renderer that can be used in a game with minimal effort.
 
+Maps should be defined as json so other tools can be used to create them, possibly even with Tiled and LDTK support or compatibility.
+Tilemaps should in the best case just reuse the normal sprite renderer and just add some additional logic to handle the tilemap data.
+
+In the most basic form, the tilemap renderer should be able to receive a map.json file and render it to the screen.
+
+The current prototype is able to render a simple tilemap with a single tileset.
+The result looks like this:
+
+<p align="center">
+  <img src="./screenshot.png" />
+</p>
+
 ## License
 
 This package is part of the Toasty Engine project and is licensed under the MIT License.
