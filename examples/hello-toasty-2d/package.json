@@ -1,0 +1,17 @@
+{
+  "name": "@toasty-engine-example/hello-toasty-2d",
+  "description": "A simple 2D game example using the Toasty Engine.",
+  "license": "MIT",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@toasty-engine/engine": "workspace:*",
+    "@toasty-engine/math": "workspace:*"
+  }
+}

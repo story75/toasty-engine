@@ -1,0 +1,30 @@
+{
+  "name": "@toasty-engine/canvas-context",
+  "description": "A utility package to setup up a canvas for WebGPU rendering.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/story75/toasty-engine.git",
+    "directory": "packages/canvas-text"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/esm.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc",
+    "bundle": "toasty-cli bundle"
+  },
+  "dependencies": {
+    "@webgpu/types": "^0.1.52"
+  },
+  "devDependencies": {
+    "@toasty-engine/cli": "workspace:*"
+  }
+}

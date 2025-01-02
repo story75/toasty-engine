@@ -1,0 +1,37 @@
+{
+  "name": "@toasty-engine/engine",
+  "description": "The main engine package for the Toasty game engine. This package provides everything needed to create a game using the Toasty engine.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/story75/toasty-engine.git",
+    "directory": "packages/engine"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/esm.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc",
+    "bundle": "toasty-cli bundle"
+  },
+  "dependencies": {
+    "colorjs.io": "^0.5.2",
+    "@toasty-engine/canvas-text": "workspace:*",
+    "@toasty-engine/canvas-context": "workspace:*",
+    "@toasty-engine/2d-sprite-renderer": "workspace:*",
+    "@toasty-engine/gpu-buffer": "workspace:*",
+    "@toasty-engine/loader": "workspace:*",
+    "@toasty-engine/math": "workspace:*",
+    "@toasty-engine/timer": "workspace:*"
+  },
+  "devDependencies": {
+    "@toasty-engine/cli": "workspace:*"
+  }
+}

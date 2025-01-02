@@ -58,6 +58,7 @@ export default defineConfig({
         },
         {
           label: 'Contributor guide',
+          collapsed: true,
           items: [
             { label: 'Why Toasty?', slug: 'contributors/goal' },
             { label: 'Getting started', slug: 'contributors/getting-started' },

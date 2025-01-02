@@ -1,0 +1,31 @@
+{
+  "name": "@toasty-engine/2d-sprite-renderer",
+  "description": "A utility package to render 2D sprites in WebGPU.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/story75/toasty-engine.git",
+    "directory": "packages/2d-sprite-renderer"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/esm.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc",
+    "bundle": "toasty-cli bundle"
+  },
+  "dependencies": {
+    "@webgpu/types": "^0.1.52",
+    "@toasty-engine/gpu-buffer": "workspace:*"
+  },
+  "devDependencies": {
+    "@toasty-engine/cli": "workspace:*"
+  }
+}
