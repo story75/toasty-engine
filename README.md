@@ -1,4 +1,5 @@
 # Toasty: A 2D WebGPU Game Engine
+[![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b756d6e488e261bd5377/test_coverage)](https://codeclimate.com/github/story75/toasty-engine/test_coverage)
 
 <p align="center">
