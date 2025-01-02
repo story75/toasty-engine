@@ -18,6 +18,7 @@ jobs:
       # https://github.com/withastro/action/issues/32
       - uses: oven-sh/setup-bun@v2
       - run: bun install
+      - run: bun bundle # This is necessary for the documentation build, because we need the .d.ts files of the packages
       - run: bun run --cwd documentation build
       - uses: actions/upload-pages-artifact@v3
         with:
