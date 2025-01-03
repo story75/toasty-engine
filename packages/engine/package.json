@@ -1,5 +1,6 @@
 {
   "name": "@toasty-engine/engine",
+  "version": "0.0.1",
   "description": "The main engine package for the Toasty game engine. This package provides everything needed to create a game using the Toasty engine.",
   "repository": {
     "type": "git",

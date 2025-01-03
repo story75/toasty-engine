@@ -1,5 +1,6 @@
 {
   "name": "@toasty-engine/canvas-text",
+  "version": "0.0.1",
   "description": "A utility package for creating textures from text in game development. This package provides tools for rendering text to canvas elements, which can then be used as textures in games.",
   "repository": {
     "type": "git",

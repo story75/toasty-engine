@@ -1,5 +1,6 @@
 {
   "name": "@toasty-engine/math",
+  "version": "0.0.1",
   "description": "A utility package for game mathematics and calculations. This package provides essential mathematical operations and utilities commonly used in game development, with a focus on performance and ease of use.",
   "repository": {
     "type": "git",

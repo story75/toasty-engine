@@ -1,5 +1,6 @@
 {
   "name": "@toasty-engine/2d-sprite-renderer",
+  "version": "0.0.1",
   "description": "A utility package to render 2D sprites in WebGPU.",
   "repository": {
     "type": "git",

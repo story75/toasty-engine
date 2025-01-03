@@ -1,5 +1,6 @@
 {
   "name": "@toasty-engine/canvas-context",
+  "version": "0.0.1",
   "description": "A utility package to setup up a canvas for WebGPU rendering.",
   "repository": {
     "type": "git",

@@ -1,5 +1,6 @@
 {
   "name": "@toasty-engine/cli",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/story75/toasty-engine.git",

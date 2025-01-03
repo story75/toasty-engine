@@ -1,5 +1,6 @@
 {
   "name": "@toasty-engine/loader",
+  "version": "0.0.1",
   "description": "A utility package for loading assets in game development. This package provides simple tools for loading textures and fonts for use in games.",
   "repository": {
     "type": "git",
