@@ -3,6 +3,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { bundle } from './commands/bundle/bundle';
 import { readme } from './commands/readme/readme';
+import { release } from './commands/release/release';
 
 const cli = yargs(hideBin(Bun.argv))
   .scriptName('toasty-cli')
@@ -11,7 +12,7 @@ const cli = yargs(hideBin(Bun.argv))
   .version(false)
   .help(true);
 
-const commands = [readme, bundle];
+const commands = [readme, bundle, release];
 
 for (const command of commands) {
   command(cli);

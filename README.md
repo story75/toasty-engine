@@ -13,6 +13,25 @@ Toasty is a game engine built with WebGPU, specifically designed for creating 2D
 
 This project is under active development. Expect that APIs may be missing, incomplete, or subject to change. If you're feeling adventurous and want to try it out, please check the [documentation](https://story75.github.io/toasty-engine/) and report any issues you encounter.
 
+## Minimal Example
+
+Toasty aims to get you started as quickly as possible. Here is roughly the most minimal example of a Toasty game:
+
+```typescript
+import { createApplication2d } from '@toasty-engine/engine';
+
+const canvas = document.querySelector('canvas');
+const context = await createApplication2d({canvas});
+
+const texture = await context.loadTexture('/toasty-logo.png');
+const logoSprite = context.createSprite(texture);
+
+context.provideRenderLogic(() => [logoSprite]);
+context.start();
+```
+
+This example renders a sprite using Toasty's 2d core functionality. For more examples and detailed documentation, please visit our [documentation site](https://story75.github.io/toasty-engine/) or the [examples](./examples) directory.
+
 ## Core Design Principles
 
 Toasty is guided by these design goals:

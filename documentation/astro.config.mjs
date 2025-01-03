@@ -54,6 +54,7 @@ export default defineConfig({
             { label: 'Getting started', slug: 'users/getting-started' },
             { label: 'Packages', slug: 'users/packages' },
             { label: 'Examples', slug: 'users/examples' },
+            { label: 'Versioning', slug: 'users/versioning' },
           ],
         },
         {
