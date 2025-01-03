@@ -23,3 +23,6 @@ jobs:
           coverageLocations: ${{github.workspace}}/coverage/clover.xml:clover
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+      - uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
