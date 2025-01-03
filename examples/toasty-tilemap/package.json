@@ -3,7 +3,6 @@
   "description": "A prototype tilemap renderer for the Toasty Engine.",
   "license": "MIT",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
