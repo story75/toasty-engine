@@ -1,0 +1,20 @@
+name: Release
+on:
+  push:
+    tags: ['*']
+permissions:
+  contents: read
+jobs:
+  publish:
+    name: Publish NPM packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      # run scripts
+      - run: bun install
+      - run: bunx toasty-cli prepare-release
+      - run: bun release
+        env:
+          PUBLISH_VERSION: ${{ github.ref_name }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

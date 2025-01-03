@@ -7,6 +7,7 @@
     "url": "git+https://github.com/story75/toasty-engine.git",
     "directory": "packages/2d-sprite-renderer"
   },
+  "homepage": "https://story75.github.io/toasty-engine/",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/esm.js",
@@ -20,7 +21,8 @@
   },
   "scripts": {
     "check": "tsc",
-    "bundle": "toasty-cli bundle"
+    "bundle": "toasty-cli bundle",
+    "release": "toasty-cli release \"${PUBLISH_VERSION}\""
   },
   "dependencies": {
     "@webgpu/types": "^0.1.52",

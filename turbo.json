@@ -11,6 +11,12 @@
       "dependsOn": ["^bundle", "check"],
       "outputs": ["dist/index.js", "dist/esm.js"],
       "outputLogs": "errors-only"
+    },
+    "release": {
+      "dependsOn": ["bundle"],
+      "cache": false,
+      "outputLogs": "errors-only",
+      "env": ["PUBLISH_VERSION"]
     }
   }
 }
