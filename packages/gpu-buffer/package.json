@@ -22,7 +22,7 @@
   "scripts": {
     "check": "tsc",
     "bundle": "toasty-cli bundle",
-    "release": "toasty-cli release \"${PUBLISH_VERSION}\""
+    "release": "toasty-cli release --version \"${PUBLISH_VERSION}\""
   },
   "dependencies": {
     "@webgpu/types": "^0.1.52"
