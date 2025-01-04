@@ -15,8 +15,8 @@
     "release": {
       "dependsOn": ["bundle"],
       "cache": false,
-      "outputLogs": "errors-only",
-      "env": ["PUBLISH_VERSION"]
+      "outputLogs": "full",
+      "env": ["NPM_TOKEN", "PUBLISH_VERSION"]
     }
   }
 }
