@@ -15,7 +15,9 @@ type PublishConfig = {
 };
 
 type PackageJson = PublishConfig & {
+  name: string;
   version: string;
+  private?: boolean;
   publishConfig?: PublishConfig;
   dependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;
@@ -38,14 +40,27 @@ export function release(cli: ReturnType<typeof yargs>): void {
         alias: 't',
         default: 'latest',
       },
+      'dry-run': {
+        type: 'boolean',
+        describe: 'Dry run the release',
+        alias: 'd',
+        default: false,
+      },
     },
     async (args) => {
       const version = args.version;
       const tag = args.tag;
+      const dryRun = args['dry-run'];
       const workingDirectory = cwd();
 
       const packageJsonFile = Bun.file(join(workingDirectory, 'package.json'));
       const content = (await packageJsonFile.json()) as PackageJson;
+
+      if (content.private) {
+        throw new Error(`Cannot release private package ${content.name}!`);
+      }
+
+      console.log(`Releasing package ${content.name} version ${version} with tag ${tag}...`);
 
       content.version = version;
 
@@ -99,7 +114,7 @@ export function release(cli: ReturnType<typeof yargs>): void {
       const licenseOutput = Bun.file(join(workingDirectory, 'LICENSE'));
       await Bun.write(licenseOutput, licenseInput);
 
-      await $`bun publish --access public --tag ${tag}`;
+      await $`bun publish --access public --tag ${tag} ${dryRun ? '--dry-run' : ''}`;
     },
   );
 }
